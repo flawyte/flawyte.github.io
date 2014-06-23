@@ -11,6 +11,18 @@
                 color: #999;
                 font-size: 1em;
             }
+            .footer * {
+                display: inline-block;
+                vertical-align: middle !important;
+            }
+            #___plusone_0 {
+                width: 65px !important;
+            }
+            .social.medias {
+                margin-right: -10px;
+                position: absolute;
+                right: 0;
+            }
         </style>
         <title>HotlinkJS</title>
         <script>
@@ -24,6 +36,16 @@
         </script>
     </head>
     <body class="jumbotron">
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <div class="col-lg-6 col-lg-offset-3 form" style="padding: 20px">
             <h1>HotlinkJS</h1>
             <p style="color: #999;">Getting hotlinks made <em>easy</em> just for <strong>YOU</strong> !</p>
@@ -46,6 +68,14 @@
                 <p>Any suggestion ? Found a bug ?
                     <a href="mailto:mickael.allonneau@gmail.com" title="mickael.allonneau@gmail.com">Get in touch !</a>
                 </p>
+                <div class="social medias">
+                    <div class="fb-like" data-href="https://flawyte.github.io/HotlinkJS/" data-layout="button_count"
+                    data-action="like" data-show-faces="false" data-share="true"></div>
+                    <div class="g-plusone" data-href="https://flawyte.github.io/HotlinkJS/"></div>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://flawyte.github.io/HotlinkJS/" data-text="HotlinkJS takes a #GoogleDrive image link as input and returns a direct link to it for embedding ! #web" data-via="Flawyte" data-related="Flawyte">
+                        Tweet
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -53,6 +83,7 @@
         <script src="vendor/js/jquery.clipboard.js" type="text/javascript"></script>
         <script src="vendor/js/bootstrap.js" type="text/javascript"></script>
         <script src="hotlink.js" type="text/javascript"></script>
+        <script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>
         <script type="text/javascript">
             jQuery(function($) {
                 $("#copyHotlink").clipboard({
@@ -86,6 +117,11 @@
                     }
                 });
             });
+        </script>
+        <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+            if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         </script>
     </body>
 </html>
