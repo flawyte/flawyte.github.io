@@ -1,7 +1,15 @@
 <script>
-  function CustomElement(objectName, tagName) {
+  function CustomElement(objectName, tagName, properties) {
+    properties = properties || {};
+
     var proto = Object.create(HTMLElement.prototype);
 
-    window[objectName] = document.registerElement(tagName);
+    for (var key in properties) {
+      proto[key] = properties[key];
+    }
+
+    window[objectName] = document.registerElement(tagName, {
+      prototype: proto
+    });
   };
 </script>
