@@ -40,10 +40,12 @@
 
       this.shadow = {};
       this.shadow.description = this.shadowRoot.querySelector('#description');
+      this.shadow.image = this.shadowRoot.querySelector('#image');
       this.shadow.name = this.shadowRoot.querySelector('#name');
       this.shadow.url = this.shadowRoot.querySelector('#url');
 
       this.updateShadow('description');
+      this.updateShadow('image');
       this.updateShadow('name');
       this.updateShadow('url');
     }
@@ -53,6 +55,10 @@
       switch (attr) {
         case 'description': {
           this.shadow.description.innerHTML = newVal;
+        }
+        break;
+        case 'image': {
+          this.shadow.image.src = newVal || 'http://semantic-ui.com/images/wireframe/image.png';
         }
         break;
         case 'name': {
