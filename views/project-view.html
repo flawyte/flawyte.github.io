@@ -17,7 +17,7 @@
         <p id="description"></p>
       </div>
       <div class="three wide column">
-        <a class="ui right floated icon button" id="url">
+        <a class="ui right floated icon button" id="url" target="_blank">
           <i class="external icon"></i>
         </a>
       </div>
@@ -41,9 +41,11 @@
       this.shadow = {};
       this.shadow.description = this.shadowRoot.querySelector('#description');
       this.shadow.name = this.shadowRoot.querySelector('#name');
+      this.shadow.url = this.shadowRoot.querySelector('#url');
 
       this.updateShadow('description');
       this.updateShadow('name');
+      this.updateShadow('url');
     }
     proto.updateShadow = function(attr) {
       var newVal = this.getAttribute(attr);
@@ -55,6 +57,10 @@
         break;
         case 'name': {
           this.shadow.name.innerHTML = newVal;
+        }
+        break;
+        case 'url': {
+          this.shadow.url.href = newVal;
         }
         break;
         default: {
