@@ -1,0 +1,7 @@
+<script>
+  function CustomElement(objectName, tagName) {
+    var proto = Object.create(HTMLElement.prototype);
+
+    window[objectName] = document.registerElement(tagName);
+  };
+</script>
