@@ -2,10 +2,17 @@
   function CustomElement(objectName, tagName, properties) {
     properties = properties || {};
 
+    var doc = document.currentScript.ownerDocument;
     var proto = Object.create(HTMLElement.prototype);
+    var template = doc.querySelector('template');
 
     for (var key in properties) {
       proto[key] = properties[key];
+    }
+
+    proto.createdCallback = function() {
+      this.createShadowRoot();
+      this.shadowRoot.appendChild(document.importNode(template.content, true));
     }
 
     window[objectName] = document.registerElement(tagName, {
