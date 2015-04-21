@@ -3,8 +3,10 @@
   <head>
     <title>flawyte - Mickael Allonneau</title>
     <style>
-      .project .description {
-        margin-left: 20px;
+      #root {
+        border-radius: 0;
+        margin: auto;
+        max-width: 750px;
       }
     </style>
     <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
@@ -23,8 +25,10 @@
     <link rel="import" href="/views/project-view.html">
   </head>
   <body>
-    <project-view image="/images/shine.png" name="Shine" description="Get hotlinks for images hosted on Google Drive." url="http://on.fb.me/1wavo00"></project-view>
-    <project-view image="/images/twitter-quote-button.png" name="Twitter Quote Button" description="This extension allows you to quote tweets <em>(quote retweet)</em> from the Twitter website." url="https://chrome.google.com/webstore/detail/twitter-quote-button/aanolkmbpbebgoenlmjmaahgogmfgkaa"></project-view>
-    <project-view image="/images/generic-web.png" name="HotlinkJS" description="Get hotlinks for images hosted on Google Drive." url="/HotlinkJS"></project-view>
+    <div class="ui segment" id="root">
+      <project-view image="/images/shine.png" name="Shine" description="Get hotlinks for images hosted on Google Drive." url="http://on.fb.me/1wavo00"></project-view>
+      <project-view image="/images/twitter-quote-button.png" name="Twitter Quote Button" description="This extension allows you to quote tweets <em>(quote retweet)</em> from the Twitter website." url="https://chrome.google.com/webstore/detail/twitter-quote-button/aanolkmbpbebgoenlmjmaahgogmfgkaa"></project-view>
+      <project-view image="/images/generic-web.png" name="HotlinkJS" description="Get hotlinks for images hosted on Google Drive." url="/HotlinkJS"></project-view>
+    </div>
   </body>
 </html>
