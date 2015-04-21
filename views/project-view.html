@@ -1,0 +1,43 @@
+<link rel="import" href="/libs/custom-element.html">
+<link rel="import" href="/libs/semantic-ui.html">
+
+<script src="/models/project.js"></script>
+
+<template>
+  <style>@import url('/bower_components/semantic-ui/dist/semantic.min.css');</style>
+  <style>
+  </style>
+  <div class="ui padded grid" id="root">
+    <div class="row">
+      <div class="ui small image three wide column">
+        <img id="image" src="http://semantic-ui.com/images/wireframe/image.png">
+      </div>
+      <div class="ten wide column">
+        <p id="name"></p>
+        <p id="description"></p>
+      </div>
+      <div class="three wide column">
+        <a class="ui right floated icon button" id="url">
+          <i class="external icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  (function() {
+    var doc = document.currentScript.ownerDocument;
+    var proto = Object.create(HTMLElement.prototype);
+    var template = doc.querySelector('template');
+
+    proto.createdCallback = function() {
+      this.createShadowRoot();
+      this.shadowRoot.appendChild(document.importNode(template.content, true));
+    }
+
+    var ProjectView = document.registerElement('project-view', {
+      prototype: proto
+    });
+  })();
+</script>
