@@ -40,8 +40,10 @@
 
       this.shadow = {};
       this.shadow.description = this.shadowRoot.querySelector('#description');
+      this.shadow.name = this.shadowRoot.querySelector('#name');
 
       this.updateShadow('description');
+      this.updateShadow('name');
     }
     proto.updateShadow = function(attr) {
       var newVal = this.getAttribute(attr);
@@ -49,6 +51,10 @@
       switch (attr) {
         case 'description': {
           this.shadow.description.innerHTML = newVal;
+        }
+        break;
+        case 'name': {
+          this.shadow.name.innerHTML = newVal;
         }
         break;
         default: {
