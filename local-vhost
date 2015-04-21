@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName local.flawyte.github.io
+
+    DocumentRoot /var/www/local.flawyte.github.io
+    <Directory /var/www/local.flawyte.github.io>
+        Order allow,deny
+        Allow from All
+        AllowOverride All
+        Options FollowSymLinks
+    </Directory>
+
+    CustomLog /var/www/local.flawyte.github.io/access.log combined
+    ErrorLog /var/www/local.flawyte.github.io/error.log
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
