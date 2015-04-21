@@ -31,9 +31,31 @@
     var proto = Object.create(HTMLElement.prototype);
     var template = doc.querySelector('template');
 
+    proto.attributeChangedCallback = function(attr, oldVal, newVal) {
+      this.updateShadow(attr);
+    };
     proto.createdCallback = function() {
       this.createShadowRoot();
       this.shadowRoot.appendChild(document.importNode(template.content, true));
+
+      this.shadow = {};
+      this.shadow.description = this.shadowRoot.querySelector('#description');
+
+      this.updateShadow('description');
+    }
+    proto.updateShadow = function(attr) {
+      var newVal = this.getAttribute(attr);
+
+      switch (attr) {
+        case 'description': {
+          this.shadow.description.innerHTML = newVal;
+        }
+        break;
+        default: {
+          console.error("project-view > attribute '" + attr + "' isn't supported");
+        }
+        break;
+      }
     }
 
     var ProjectView = document.registerElement('project-view', {
