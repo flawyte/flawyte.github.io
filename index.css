@@ -37,3 +37,8 @@ body {
   font-size: 35.3px;
   margin-bottom: 0;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
