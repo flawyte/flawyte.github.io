@@ -34,11 +34,13 @@ body {
 }
 
 .icon {
+  fill: #495057;
   height: var(--icon-size);
   width: var(--icon-size);
 }
 
 footer {
+  font-family: monospace;
   position: absolute;
   bottom: 0;
 }
