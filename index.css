@@ -20,11 +20,11 @@ main {
 .name {
   font-family: monospace;
   font-size: 2.426875rem;
+  font-weight: bold;
   margin-bottom: 0;
 }
 
 .job {
-  color: gold;
   font-family: monospace;
   font-size: 1.375rem;
   margin-top: 0.5rem;
@@ -32,21 +32,13 @@ main {
 
 .icons {
   display: flex;
-  justify-content: space-between;
   margin-top: 0.75rem;
-  width: calc(var(--icon-size) * 4 + (0.75rem * 4));
 }
 
 .icon {
   fill: #495057;
   height: var(--icon-size);
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
   width: var(--icon-size);
-}
-
-footer {
-  bottom: 0;
-  font-family: monospace;
-  position: absolute;
-  text-align: center;
-  width: 100%;
 }
