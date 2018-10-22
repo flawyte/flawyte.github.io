@@ -16,6 +16,7 @@ body {
 .icons {
   display: flex;
   justify-content: space-between;
+  margin-top: 12px;
   width: calc(var(--icon-size) * 4 + (12px * 4));
 }
 
@@ -24,7 +25,15 @@ body {
   width: var(--icon-size);
 }
 
+.job {
+  color: gold;
+  font-family: monospace;
+  font-size: 20px;
+  margin-top: 8px;
+}
+
 .name {
   font-family: monospace;
-  font-size: 36px;
+  font-size: 35.3px;
+  margin-bottom: 0;
 }
