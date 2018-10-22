@@ -1,0 +1,30 @@
+html {
+  height: 100%;
+
+  --icon-size: 36px;
+}
+
+body {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: calc(var(--icon-size) * 4 + (12px * 4));
+}
+
+.icon {
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+
+.name {
+  font-family: monospace;
+  font-size: 36px;
+}
